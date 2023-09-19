@@ -31,5 +31,14 @@ pipeline{
                 }
             }
         }
+        stage('Deploy to kubernetes'){
+            steps{
+                script{
+                    dir('./kubernetes'){
+                        kubernetesDeploy configs: 'shopfront-service.yaml', kubeConfig: [path: ''], kubeconfigId: 'k8sconfigpwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+                    }
+                }
+            }
+        }
     }
 }
