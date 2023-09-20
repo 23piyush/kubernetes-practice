@@ -2,6 +2,7 @@ pipeline{
     agent any
     tools{
         maven 'maven_3.9.4'
+        terraform 'terraform_30186'
     }
     stages{
         stage('build maven'){
@@ -38,14 +39,24 @@ pipeline{
                 }
             }
         }
-        stage('Deploy to kubernetes'){
+        // stage('Deploy to kubernetes'){
+        //     steps{
+        //         script{
+        //             dir('./kubernetes'){
+        //                 kubernetesDeploy configs: 'productcatalogue-service.yaml', kubeConfig: [path: ''], kubeconfigId: 'k8sconfigpwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+        //                 kubernetesDeploy configs: 'shopfront-service.yaml', kubeConfig: [path: ''], kubeconfigId: 'k8sconfigpwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+        //             }
+        //         }
+        //     }
+        // }
+        stage('Terraform init'){
             steps{
-                script{
-                    dir('./kubernetes'){
-                        kubernetesDeploy configs: 'productcatalogue-service.yaml', kubeConfig: [path: ''], kubeconfigId: 'k8sconfigpwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
-                        kubernetesDeploy configs: 'shopfront-service.yaml', kubeConfig: [path: ''], kubeconfigId: 'k8sconfigpwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
-                    }
-                }
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform apply'){
+            steps{
+                sh 'terraform apply --auto-approve'
             }
         }
     }
