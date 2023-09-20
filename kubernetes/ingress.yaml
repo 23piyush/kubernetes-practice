@@ -1,0 +1,33 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-app-ingress
+  namespace: default
+  # nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: "minikube-example.com"
+      http:
+        paths:
+          - path: "/products"
+            pathType: Prefix
+            backend:
+              service:
+                name: productcatalogue
+                port:
+                  number: 8020
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: shopfront
+                port:
+                   number: 8010
+          - path: "/stocks"
+            pathType: Prefix
+            backend:
+              service:
+                name: stockmanager
+                port:
+                   number: 8030
