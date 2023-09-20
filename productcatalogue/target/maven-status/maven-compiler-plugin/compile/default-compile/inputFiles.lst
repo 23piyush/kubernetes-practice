@@ -1,6 +1,6 @@
-C:\Users\piyush\Desktop\proj2\docker-Java-kubernetes-project\productcatalogue\src\main\java\uk\co\danielbryant\djshopping\productcatalogue\model\Product.java
-C:\Users\piyush\Desktop\proj2\docker-Java-kubernetes-project\productcatalogue\src\main\java\uk\co\danielbryant\djshopping\productcatalogue\healthchecks\BasicHealthCheck.java
-C:\Users\piyush\Desktop\proj2\docker-Java-kubernetes-project\productcatalogue\src\main\java\uk\co\danielbryant\djshopping\productcatalogue\configuration\ProductServiceConfiguration.java
-C:\Users\piyush\Desktop\proj2\docker-Java-kubernetes-project\productcatalogue\src\main\java\uk\co\danielbryant\djshopping\productcatalogue\ProductServiceApplication.java
-C:\Users\piyush\Desktop\proj2\docker-Java-kubernetes-project\productcatalogue\src\main\java\uk\co\danielbryant\djshopping\productcatalogue\resources\ProductResource.java
-C:\Users\piyush\Desktop\proj2\docker-Java-kubernetes-project\productcatalogue\src\main\java\uk\co\danielbryant\djshopping\productcatalogue\services\ProductService.java
+/home/piyush/Documents/solution_proj/productcatalogue/src/main/java/uk/co/danielbryant/djshopping/productcatalogue/ProductServiceApplication.java
+/home/piyush/Documents/solution_proj/productcatalogue/src/main/java/uk/co/danielbryant/djshopping/productcatalogue/resources/ProductResource.java
+/home/piyush/Documents/solution_proj/productcatalogue/src/main/java/uk/co/danielbryant/djshopping/productcatalogue/healthchecks/BasicHealthCheck.java
+/home/piyush/Documents/solution_proj/productcatalogue/src/main/java/uk/co/danielbryant/djshopping/productcatalogue/services/ProductService.java
+/home/piyush/Documents/solution_proj/productcatalogue/src/main/java/uk/co/danielbryant/djshopping/productcatalogue/configuration/ProductServiceConfiguration.java
+/home/piyush/Documents/solution_proj/productcatalogue/src/main/java/uk/co/danielbryant/djshopping/productcatalogue/model/Product.java
