@@ -34,6 +34,13 @@ spec:
         image: 8209820403/shopfront:latest
         ports:
         - containerPort: 8010
+        resources:
+          limits:
+            cpu: 500m
+            memory: 256Mi
+          requests:
+            cpu: 200m
+            memory: 128Mi
         livenessProbe:
           httpGet:
             path: /health

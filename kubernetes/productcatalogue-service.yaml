@@ -34,6 +34,13 @@ spec:
         image: 8209820403/productcatalogue:latest
         ports:
         - containerPort: 8020
+        resources:
+          limits:
+            cpu: 100m
+            memory: 500Mi
+          requests:
+            cpu: 60m
+            memory: 300Mi
         livenessProbe:
           httpGet:
             path: /healthcheck
